@@ -19,5 +19,5 @@ def add_todo(request):
     return HttpResponseRedirect("/")
 
 def delete_todo(request, todo_id):
-    Todo.objects.filter(id=todo_id).delete()
+    Todo.objects.get(id=todo_id).delete()
     return HttpResponseRedirect('/')
